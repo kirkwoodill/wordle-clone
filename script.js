@@ -2314,8 +2314,8 @@ const targetWords = [
   "rower",
   "artsy",
   "rural",
-  "shave",
-];
+  "shave"
+]
 
 // Dictionary List
 const dictionary = [

@@ -1,3 +1,7 @@
+:root {
+  --game-max-width: 500px
+
+}
 *,
 *::after,
 *::before {
@@ -6,7 +10,7 @@
 }
 
 body {
-  background-color: hsl(240, 3%, 7%);
+  background-color: hsl(226, 22%, 19%);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -15,12 +19,22 @@ body {
   font-size: clamp(0.5rem, 2.5vmin, 1.5rem);
 }
 
+.game-container {
+  width: 100%;
+  max-width: var(--game-max-width);
+  margin: 0 auto;
+  /*height: calc(100% - var(--header-height)); */
+}
+
 .keyboard {
   display: grid;
   grid-template-columns: repeat(20, minmax(auto, 1.25em));
   grid-auto-rows: 3em;
-  gap: 0.25em;
+  gap: 0.375em;
   justify-content: center;
+  background-color: hsl(226, 23%, 16%);
+  padding: 1em 0;
+  border-radius: 4px;
 }
 
 .key {
@@ -31,9 +45,9 @@ body {
   justify-content: center;
   align-items: center;
   background-color: hsl(
-    var(--hue, 200),
-    var(--saturation, 1%),
-    calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
+    var(--hue, 227),
+    var(--saturation, 19%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 42%))
   );
   color: #fff;
   fill: #fff;
@@ -80,14 +94,15 @@ body {
   flex-grow: 1;
   grid-template-columns: repeat(5, 4em);
   grid-template-rows: repeat(6, 4em);
-  gap: 0.25em;
+  gap: 0.5em;
   margin-bottom: 1em;
 }
 
 .tile {
   font-size: 2em;
   color: #fff;
-  border: 0.05em solid hsl(240, 2%, 23%);
+  background-color: hsl(223, 15%, 27%);
+  border-radius: 4px;
   font-weight: bold;
   text-transform: uppercase;
   display: flex;
@@ -98,22 +113,22 @@ body {
 }
 
 .tile[data-state="active"] {
-  border-color: hsl(200, 1%, 34%);
+  background-color: hsl(223, 15%, 37%);
 }
 
 .tile[data-state="wrong"] {
   border: none;
-  background-color: hsl(240, 2%, 23%);
+  background-color: hsl(200, 6%, 32%);
 }
 
 .tile[data-state="wrong-location"] {
   border: none;
-  background-color: hsl(49, 51%, 47%);
+  background-color: hsl(49, 64%, 49%);
 }
 
 .tile[data-state="correct"] {
   border: none;
-  background-color: hsl(115, 29%, 43%);
+  background-color: hsl(115, 29%, 53%);
 }
 
 .tile.shake {
